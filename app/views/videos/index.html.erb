@@ -12,7 +12,7 @@
     <% @videos.each do |video| %>
       <tr>
         <td><%= video.title %></td>
-        <td>  
+        <td>
           <video controls width="640" height="480" src="<%= video.file %>"></video>
         </td>
         <td><%= link_to 'Show', video %></td>
