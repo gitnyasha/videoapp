@@ -8,8 +8,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if flash[:notice] %>
+      <div class="notification bg-info global-notification p-2 text-light text center">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="notification bg-warning global-notification p-2 text-light text center">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+    <%= render 'layouts/header' %>
     <%= yield %>
   </body>
 </html>

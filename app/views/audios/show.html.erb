@@ -1,0 +1,10 @@
+<p>
+  <strong>Title:</strong>
+  <%= @audio.title %>
+</p>
+<p>
+  <strong>File:</strong>
+  <audio controls src="<%= @audio.file %>"></audio>
+</p>
+<%= link_to 'Edit', edit_audio_path(@audio) %> |
+<%= link_to 'Back', audios_path %>
