@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  get "users/dashboard"
+  resources :users, :only => [:show]
   resources :audios
   resources :images
-  get "profiles/dashboard"
-  get "profiles/show"
   devise_for :users, controllers: {
                        registrations: "registrations",
                      }

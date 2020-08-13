@@ -1,0 +1,8 @@
+<% if @user.videos.any? || @user.audios.any? || @user.images.any? %>
+  <%= render @videos %>
+  <%= will_paginate @videos %>
+  <%= render @audios %>
+  <%= will_paginate @audios %>
+  <%= render @images %>
+  <%= will_paginate @images %>
+<% end %>
