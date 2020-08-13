@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   get "users/dashboard"
-  resources :users, :only => [:show]
+  resources :users do
+    member do
+      get :subscriptions, :subscribers
+    end
+  end
   resources :audios
   resources :images
   devise_for :users, controllers: {
@@ -8,5 +12,5 @@ Rails.application.routes.draw do
                      }
   resources :videos
   root "home#index"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :relationships, only: [:create, :destroy]
 end
